@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmi3el72ht1kk"]
+
+[ext_resource type="Script" path="res://Classes/Shootfly.cs" id="1_jy65w"]
+[ext_resource type="Texture2D" uid="uid://fmt2x4x3jfjw" path="res://Media/Sprites/Shootfly.png" id="2_sl1mu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r47cj"]
+atlas = ExtResource("2_sl1mu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3edgg"]
+atlas = ExtResource("2_sl1mu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deqag"]
+atlas = ExtResource("2_sl1mu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sn3o"]
+atlas = ExtResource("2_sl1mu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5qx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r47cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3edgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deqag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sn3o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esy5u"]
+size = Vector2(14, 15.5)
+
+[node name="Shootfly" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_jy65w")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f5qx5")
+frame_progress = 0.614553
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.25)
+shape = SubResource("RectangleShape2D_esy5u")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)

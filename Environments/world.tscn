@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bitk4v2fq6kyd"]
+
+[ext_resource type="Script" path="res://Environments/backdrop.scroll.gd" id="2_6yk84"]
+[ext_resource type="Texture2D" uid="uid://dmtn0dmm70x85" path="res://Media/Sprites/starscrollbg.png" id="2_a8ckd"]
+[ext_resource type="PackedScene" uid="uid://bp5rp1e50brmp" path="res://Classes/player_ship.tscn" id="3_k21wm"]
+[ext_resource type="PackedScene" uid="uid://bmi3el72ht1kk" path="res://Classes/shootfly.tscn" id="4_i7krv"]
+
+[node name="World" type="Node2D"]
+texture_filter = 1
+metadata/_edit_horizontal_guides_ = [16.0]
+
+[node name="cam" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="backdrop" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2(100, 0)
+script = ExtResource("2_6yk84")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="backdrop"]
+texture_repeat = 2
+motion_mirroring = Vector2(160, 384)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="backdrop/ParallaxLayer"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_a8ckd")
+centered = false
+
+[node name="PlayerShip" parent="." instance=ExtResource("3_k21wm")]
+
+[node name="Shootfly" parent="." instance=ExtResource("4_i7krv")]
+position = Vector2(24, 48)
+
+[node name="Shootfly2" parent="." instance=ExtResource("4_i7krv")]
+position = Vector2(136, 48)

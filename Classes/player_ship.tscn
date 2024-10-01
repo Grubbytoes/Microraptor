@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp5rp1e50brmp"]
+
+[ext_resource type="Script" path="res://Classes/PlayerShip.cs" id="1_kcn52"]
+[ext_resource type="Texture2D" uid="uid://cxj54od1ys6xw" path="res://Media/Sprites/microraptor-ship.png" id="1_msgpl"]
+
+[node name="PlayerShip" type="CharacterBody2D"]
+script = ExtResource("1_kcn52")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(83, 171)
+texture = ExtResource("1_msgpl")
