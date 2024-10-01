@@ -9,3 +9,5 @@ script = ExtResource("1_kcn52")
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(83, 171)
 texture = ExtResource("1_msgpl")
+hframes = 2
+region_rect = Rect2(2, 0, 0, 0)
