@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerShip : CharacterBody2D
+public partial class PlayerShip : AbstractShip
 {
 	private Vector2 _inputVector;
 	private Sprite2D _sprite;
@@ -28,6 +28,8 @@ public partial class PlayerShip : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		base._Ready();
+
 		_sprite = (Sprite2D)FindChild("sprite");
 	}
 

@@ -9,7 +9,7 @@ public partial class Shootfly : AbstractEnemy
 		base._Ready();
 
         // Setup
-        _sprite.Play("default");
+        Sprite.Play("default");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
