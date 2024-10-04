@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bassixxpjjfjj"]
+
+[ext_resource type="PackedScene" uid="uid://bmi3el72ht1kk" path="res://Classes/shootfly.tscn" id="1_2cqqg"]
+[ext_resource type="Script" path="res://Classes/EnemyHook.cs" id="1_5rfpy"]
+
+[sub_resource type="Curve2D" id="Curve2D_2pwg8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 24, 24, 0, 0, 0, 0, 88.462, 22.8506, 0, 0, 0, 0, 136, 24, 0, 0, 0, 0, 136, 80, 0, 0, 0, 0, 24, 80, 0, 0, 0, 0, 24, 24)
+}
+point_count = 6
+
+[node name="Wave" type="Node2D"]
+
+[node name="path" type="Path2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+curve = SubResource("Curve2D_2pwg8")
+
+[node name="enemyHook" type="PathFollow2D" parent="path"]
+position = Vector2(24, 24)
+rotation = -0.0178288
+rotates = false
+script = ExtResource("1_5rfpy")
+
+[node name="Shootfly" parent="path/enemyHook" instance=ExtResource("1_2cqqg")]
+rotation = 0.017829
+
+[node name="enemyHook2" type="PathFollow2D" parent="path"]
+position = Vector2(67.9941, 23.2156)
+rotation = -0.0178288
+progress = 44.0
+rotates = false
+script = ExtResource("1_5rfpy")
+
+[node name="Shootfly" parent="path/enemyHook2" instance=ExtResource("1_2cqqg")]
+rotation = 0.017829
+
+[node name="enemyHook3" type="PathFollow2D" parent="path"]
+position = Vector2(111.983, 23.4193)
+rotation = -0.0178288
+progress = 88.0
+rotates = false
+script = ExtResource("1_5rfpy")
+
+[node name="Shootfly" parent="path/enemyHook3" instance=ExtResource("1_2cqqg")]
+rotation = 0.017829
