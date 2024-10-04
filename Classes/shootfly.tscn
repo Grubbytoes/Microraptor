@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bmi3el72ht1kk"]
 
-[ext_resource type="Script" path="res://Classes/Shootfly.cs" id="1_jy65w"]
+[ext_resource type="Script" path="res://Classes/Shootfly.gd" id="1_ycb11"]
 [ext_resource type="Texture2D" uid="uid://fmt2x4x3jfjw" path="res://Media/Sprites/Shootfly.png" id="2_sl1mu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r47cj"]
@@ -48,7 +48,7 @@ size = Vector2(14, 15.5)
 
 [node name="Shootfly" type="CharacterBody2D"]
 texture_filter = 1
-script = ExtResource("1_jy65w")
+script = ExtResource("1_ycb11")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f5qx5")
