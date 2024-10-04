@@ -16,4 +16,5 @@ mono_crash.*.json
 
 # MY IGNORES
 # Large files
-Media/
+Media/*
+!Media/Sprites/
