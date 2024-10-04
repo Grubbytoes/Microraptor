@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b75g0w5eesd6p"]
+
+[ext_resource type="Texture2D" uid="uid://bw188e5kqegou" path="res://Media/Sprites/projectiles.png" id="1_7uk6m"]
+[ext_resource type="Script" path="res://Classes/Scripts/Projectile.gd" id="1_s1vmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nl4wn"]
+size = Vector2(4, 6)
+
+[node name="PlayerProjectile" type="AnimatableBody2D"]
+script = ExtResource("1_s1vmm")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_7uk6m")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 8)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nl4wn")

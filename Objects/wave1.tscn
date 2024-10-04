@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bassixxpjjfjj"]
 
 [ext_resource type="PackedScene" uid="uid://bmi3el72ht1kk" path="res://Classes/shootfly.tscn" id="1_2cqqg"]
-[ext_resource type="Script" path="res://Classes/EnemyHook.gd" id="1_n0cyq"]
+[ext_resource type="Script" path="res://Classes/Scripts/EnemyHook.gd" id="1_n0cyq"]
 
 [sub_resource type="Curve2D" id="Curve2D_2pwg8"]
 _data = {

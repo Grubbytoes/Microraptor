@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bmi3el72ht1kk"]
 
-[ext_resource type="Script" path="res://Classes/Shootfly.gd" id="1_ycb11"]
+[ext_resource type="Script" path="res://Classes/Scripts/Shootfly.gd" id="1_ycb11"]
 [ext_resource type="Texture2D" uid="uid://fmt2x4x3jfjw" path="res://Media/Sprites/Shootfly.png" id="2_sl1mu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r47cj"]

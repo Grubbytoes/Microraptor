@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bitk4v2fq6kyd"]
+[gd_scene load_steps=7 format=3 uid="uid://bitk4v2fq6kyd"]
 
 [ext_resource type="Script" path="res://Environments/backdrop.scroll.gd" id="2_6yk84"]
 [ext_resource type="Texture2D" uid="uid://dmtn0dmm70x85" path="res://Media/Sprites/starscrollbg.png" id="2_a8ckd"]
 [ext_resource type="PackedScene" uid="uid://bp5rp1e50brmp" path="res://Classes/player_ship.tscn" id="3_k21wm"]
 [ext_resource type="PackedScene" uid="uid://bassixxpjjfjj" path="res://Objects/wave1.tscn" id="4_krhgq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prlik"]
+size = Vector2(10, 207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3w0q"]
+size = Vector2(178, 20)
+
 [node name="World" type="Node2D"]
 texture_filter = 1
 metadata/_edit_horizontal_guides_ = [16.0]
-
-[node name="Center" type="Node2D" parent="."]
-position = Vector2(80, 104)
-metadata/_edit_lock_ = true
 
 [node name="cam" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -38,3 +40,23 @@ centered = false
 position = Vector2(80, 176)
 
 [node name="Wave" parent="." instance=ExtResource("4_krhgq")]
+
+[node name="Boundries" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundries"]
+
+[node name="right" type="CollisionShape2D" parent="Boundries/StaticBody2D"]
+position = Vector2(168, 93.5)
+shape = SubResource("RectangleShape2D_prlik")
+
+[node name="left" type="CollisionShape2D" parent="Boundries/StaticBody2D"]
+position = Vector2(-8, 93.5)
+shape = SubResource("RectangleShape2D_prlik")
+
+[node name="top" type="CollisionShape2D" parent="Boundries/StaticBody2D"]
+position = Vector2(79, -16)
+shape = SubResource("RectangleShape2D_y3w0q")
+
+[node name="bottom" type="CollisionShape2D" parent="Boundries/StaticBody2D"]
+position = Vector2(79, 208)
+shape = SubResource("RectangleShape2D_y3w0q")

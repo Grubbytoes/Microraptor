@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bp5rp1e50brmp"]
 
-[ext_resource type="Script" path="res://Classes/PlayerShip.gd" id="1_gnyk3"]
+[ext_resource type="Script" path="res://Classes/Scripts/PlayerShip.gd" id="1_gnyk3"]
 [ext_resource type="Texture2D" uid="uid://cxj54od1ys6xw" path="res://Media/Sprites/microraptor-ship.png" id="1_msgpl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bryu4"]
@@ -27,3 +27,11 @@ debug_color = Color(0.804166, 0.401747, 0.314649, 0.419608)
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g4rrn")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="gun" type="Marker2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="gun_timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[connection signal="timeout" from="gun_timer" to="." method="ready_to_shoot"]
