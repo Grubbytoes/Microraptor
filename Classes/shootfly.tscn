@@ -46,6 +46,21 @@ height = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esy5u"]
 size = Vector2(14, 15.5)
 
+[sub_resource type="Animation" id="Animation_axl4p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_4h1ut"]
 resource_name = "hit"
 length = 0.4
@@ -62,21 +77,6 @@ tracks/0/keys = {
 "values": [Vector2(-2, 0), Vector2(2, 0), Vector2(-2, 0), Vector2(2, 0), Vector2(-2, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_axl4p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ttfi2"]
 _data = {
 "RESET": SubResource("Animation_axl4p"),
@@ -86,6 +86,7 @@ _data = {
 [node name="Shootfly" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_ycb11")
+hp = 4
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f5qx5")

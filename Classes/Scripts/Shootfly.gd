@@ -6,6 +6,7 @@ extends AbstractEnemy
 
 
 func hit_by_projectile(p: Projectile):
+    super.hit_by_projectile(p)
     $anim.play("hit")
 
 

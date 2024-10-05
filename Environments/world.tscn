@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bitk4v2fq6kyd"]
+[gd_scene load_steps=8 format=3 uid="uid://bitk4v2fq6kyd"]
 
 [ext_resource type="Script" path="res://Environments/backdrop.scroll.gd" id="2_6yk84"]
 [ext_resource type="Texture2D" uid="uid://dmtn0dmm70x85" path="res://Media/Sprites/starscrollbg.png" id="2_a8ckd"]
 [ext_resource type="PackedScene" uid="uid://bp5rp1e50brmp" path="res://Classes/player_ship.tscn" id="3_k21wm"]
 [ext_resource type="PackedScene" uid="uid://bassixxpjjfjj" path="res://Objects/wave1.tscn" id="4_krhgq"]
+[ext_resource type="Theme" uid="uid://t0ixm1a8q4pd" path="res://Media/Misc/_theme.tres" id="5_vrje1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prlik"]
 size = Vector2(10, 207)
@@ -60,3 +61,24 @@ shape = SubResource("RectangleShape2D_y3w0q")
 [node name="bottom" type="CollisionShape2D" parent="Boundries/StaticBody2D"]
 position = Vector2(79, 208)
 shape = SubResource("RectangleShape2D_y3w0q")
+
+[node name="HUD" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 192.0
+
+[node name="margin" type="MarginContainer" parent="HUD"]
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 16.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="score_label" type="Label" parent="HUD/margin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_vrje1")
+text = "SCORE : 1000"

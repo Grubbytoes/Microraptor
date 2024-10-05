@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var collision: CollisionShape2D = $collision
 @onready var hitbox: Area2D = $hitbox
+@export var team: int
 
 
 func hit_by_projectile(p: Projectile):
@@ -18,3 +19,7 @@ func launch_projectile(p: Projectile, launch_from: Vector2 = self.position, laun
     p.position = launch_from
     add_sibling(p)
     p.launch(launch_trajectory)
+
+
+func destroyed():
+    queue_free()
