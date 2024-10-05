@@ -8,9 +8,8 @@ extends AbstractShip
 @onready var gun_timer: Timer = $gun_timer
 
 # PUBLIC
-const ACCELERATION = 50
 const MAX_SPEED = 125
-const DRAG = 15
+const DRAG = 40
 const SHOOTING_SPEED = 0.25
 
 var is_firing: bool
@@ -45,13 +44,9 @@ func _physics_process(_delta):
 
 	# Accelerate or decelerate
 	if (_input_vector):
-		velocity += _input_vector * ACCELERATION
+		velocity = velocity.lerp(_input_vector * MAX_SPEED, 0.25)
 	elif velocity:
 		velocity = velocity.normalized() * max(_velocity_len - DRAG, 0) 
-	
-	# Apply MAX_SPEED
-	if _velocity_len > MAX_SPEED:
-		velocity = velocity.normalized() * MAX_SPEED
 	
 	# Shoot bullets
 	if Input.is_action_just_pressed("action_b") and !is_firing:

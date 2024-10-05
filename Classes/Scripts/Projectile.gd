@@ -12,4 +12,4 @@ func launch(launch_trajectory):
 
 # MAGIC METHODS
 func _physics_process(delta):
-	position += trajectory * delta
+	global_position += trajectory * delta
