@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl4wn"]
 size = Vector2(4, 6)
 
-[node name="PlayerProjectile" type="AnimatableBody2D"]
+[node name="PlayerProjectile" type="Area2D"]
 script = ExtResource("1_s1vmm")
+is_friendly = true
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_7uk6m")

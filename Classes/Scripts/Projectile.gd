@@ -1,7 +1,7 @@
 class_name Projectile
-extends AnimatableBody2D
+extends Area2D
 
-@export var team: String
+@export var team: int
 
 var trajectory: Vector2
 

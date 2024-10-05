@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmi3el72ht1kk"]
+[gd_scene load_steps=13 format=3 uid="uid://bmi3el72ht1kk"]
 
 [ext_resource type="Script" path="res://Classes/Scripts/Shootfly.gd" id="1_ycb11"]
 [ext_resource type="Texture2D" uid="uid://fmt2x4x3jfjw" path="res://Media/Sprites/Shootfly.png" id="2_sl1mu"]
@@ -46,6 +46,43 @@ height = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esy5u"]
 size = Vector2(14, 15.5)
 
+[sub_resource type="Animation" id="Animation_4h1ut"]
+resource_name = "hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-2, 0), Vector2(2, 0), Vector2(-2, 0), Vector2(2, 0), Vector2(-2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_axl4p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ttfi2"]
+_data = {
+"RESET": SubResource("Animation_axl4p"),
+"hit": SubResource("Animation_4h1ut")
+}
+
 [node name="Shootfly" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_ycb11")
@@ -66,3 +103,10 @@ debug_color = Color(0.804166, 0.401747, 0.314649, 0.419608)
 position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_esy5u")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ttfi2")
+}
+
+[connection signal="area_entered" from="hitbox" to="." method="hitbox_area_entered"]
